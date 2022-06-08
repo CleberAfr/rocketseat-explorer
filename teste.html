@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+ <head>
+<script type="text/javascript">
+  window.onload = function () {
+	var button = document.getElementById("id_of_button");
+	button.removeAttribute("disabled");
+	button.onclick = function() {
+	  if (!button.getAttribute("disabled") != "disabled") {
+		button.setAttribute("disabled", "disabled");
+		setTimeout(function() {
+		  button.removeAttribute("disabled");
+		}, 5000);
+		// do stuff ...
+	  }
+	}
+  }
+</script>
+<style type="text/css">
+  input {
+	background-color: #00ff00;
+  }
+  input[disabled=disabled] {
+	background-color: #ff0000;
+  }
+</style>
+ </head>
+ <body>
+<input id="id_of_button" type="button" value="button" />
+ </body>
+</html>
